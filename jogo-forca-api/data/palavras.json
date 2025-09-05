@@ -1,0 +1,5 @@
+[
+  {"palavra":"javascript","dica":"Linguagem para web"},
+  {"palavra":"express","dica":"Framework Node.js"},
+  {"palavra":"node","dica":"Runtime JavaScript"}
+]

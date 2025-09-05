@@ -1,0 +1,20 @@
+{
+  "openapi": "3.0.1",
+  "info": { "title": "Gerenciador de Tarefas API", "version": "1.0.0" },
+  "paths": {
+    "/api/tarefas": {
+      "get": { "summary": "Listar tarefas", "responses": { "200": {"description": "OK"} } },
+      "post": {
+        "summary": "Criar tarefa",
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"type": "object","properties": {"nome": {"type": "string"},"prioridade": {"type": "integer"}},"required": ["nome", "prioridade"]}}}},
+        "responses": {"201": {"description": "Criado"}}
+      }
+    },
+    "/api/tarefas/{id}/concluir": {
+      "patch": {"summary": "Concluir tarefa","parameters": [{"name": "id","in": "path","required": true,"schema": {"type": "string"}}],"responses": {"200": {"description": "OK"},"404": {"description": "Não encontrado"}}}
+    },
+    "/api/tarefas/{id}": {
+      "delete": {"summary": "Deletar tarefa","parameters": [{"name": "id","in": "path","required": true,"schema": {"type": "string"}}],"responses": {"204": {"description": "Sem conteúdo"}}}
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "openapi": "3.0.1",
+  "info": { "title": "Simulador de Votação API", "version": "1.0.0" },
+  "paths": {
+    "/api/votacao/votar": {
+      "post": {
+        "summary": "Registrar voto",
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"type": "object","properties": {"voto": {"type": "string","enum": ["candidato1","candidato2","branco","nulo"]}},"required": ["voto"]}}}},
+        "responses": {"201": {"description": "Criado"}}
+      }
+    },
+    "/api/votacao/resultados": { "get": { "summary": "Resultados", "responses": { "200": {"description": "OK"} } } },
+    "/api/votacao/historico": { "get": { "summary": "Histórico", "responses": { "200": {"description": "OK"} } } }
+  }
+}

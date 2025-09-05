@@ -1,0 +1,13 @@
+# dependências
+node_modules
+npm-debug.log*
+yarn-*.log*
+
+# build cache
+coverage
+.build
+.cache
+.tmp
+
+# env
+.env*

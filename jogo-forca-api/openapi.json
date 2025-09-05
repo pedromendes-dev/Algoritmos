@@ -1,0 +1,16 @@
+{
+  "openapi": "3.0.1",
+  "info": { "title": "Jogo da Forca API", "version": "1.0.0" },
+  "paths": {
+    "/api/forca/iniciar": { "get": { "summary": "Iniciar jogo", "responses": { "200": {"description": "OK"} } } },
+    "/api/forca/tentar": {
+      "post": {
+        "summary": "Tentar letra",
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"type": "object","properties": {"letra": {"type": "string","minLength": 1,"maxLength": 1}},"required": ["letra"]}}}},
+        "responses": {"200": {"description": "OK"}}
+      }
+    },
+    "/api/forca/status": { "get": { "summary": "Status atual", "responses": { "200": {"description": "OK"} } } },
+    "/api/forca/reiniciar": { "post": { "summary": "Reiniciar jogo", "responses": { "200": {"description": "OK"} } } }
+  }
+}
